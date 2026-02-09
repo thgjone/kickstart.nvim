@@ -1,0 +1,2 @@
+
+require("ft_common")

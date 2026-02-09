@@ -1,0 +1,16 @@
+
+%if [ -f "./.vim.dml" ]
+%include ./.vim.dml
+%endif
+
+
+me 		:!echo %
+yank_path 	:!cx "%"
+
+
+
+dewindows 		:%s///
+
+
+sq_session 		:mksession! .session.vim | :wqa
+
