@@ -1,0 +1,29 @@
+
+%if [ -f "./.vim.dml" ]
+%include ./.vim.dml
+%endif
+
+
+me			!echo %
+yank_path 		:!xc "%"
+
+
+dewindows 		:%s///
+sq_session 		:mksession! .session.vim | :wqa
+
+toggle_context       exec "TSContextToggle"
+
+# sudo_save           :%!sudo -A tee %
+
+
+%if [ "$FT" = "sh" ]
+chmod_exec           !chmod +x %
+%endif
+
+
+open_init            tabnew $HOME/.config/nvim/init.lua
+open_plugins.lua     tabnew $HOME/.config/nvim/lua/plugins.lua
+open_keybindings.lua tabnew $HOME/.config/nvim/lua/keybindings.lua
+open_coc_config.lua  tabnew $HOME/.config/nvim/lua/coc_config.lua
+open_vdml            tabnew $HOME/.config/nvim/vim.dml
+open_custom_plugins  tabnew $HOME/.config/nvim/plugin/custom.vim

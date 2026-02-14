@@ -1,0 +1,9 @@
+
+-- ⟦  ⟧    U+27E6 / U+27E7   Mathematical white square brackets
+-- ⟨  ⟩    U+27E8 / U+27E9   Mathematical angle brackets
+-- ⟪  ⟫    U+27EA / U+27EB   Mathematical double angle brackets
+-- ⟮  ⟯    U+27EE / U+27EF   Mathematical flattened parentheses
+-- ⦅  ⦆    U+2985 / U+2986   Left/right white parenthesis
+-- ⦇  ⦈    U+2987 / U+2988   Z notation image brackets
+-- ⦗  ⦘    U+2997 / U+2998   Left/right black tortoise shell bracket
+-- ⦃  ⦄    U+2983 / U+2984   White curly brackets
