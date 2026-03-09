@@ -13,6 +13,8 @@ sq_session 		:mksession! .session.vim | :wqa
 
 toggle_context       exec "TSContextToggle"
 
+pp 	  		:%!tr ';' '\n'
+
 # sudo_save           :%!sudo -A tee %
 
 
