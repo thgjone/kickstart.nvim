@@ -45,7 +45,7 @@ smap('<M-L>', ':+tabmove<CR>', 'Move tab left')
 smap('<C-w>t', ':tab split<CR>', 'Move curent window to new tab')
 
 -- External Tools
-smap('<M-a>', ":!align -clmn 1 ''<Left>", 'Align selected lines by identifyer', 'v')
+map('<M-a>', ":!align -clmn 1 ''<Left>", 'Align selected lines by identifyer', 'v')
 smap('<M-d>', ':lua _G.VimDML("")<CR>', 'Open VimDML')
 -- keyset('n', '<M-CR>', ':call VimDML("make")<CR>', opts)
 -- keyset('n', '<C-M-CR>', ':set makeprg=', opt_ns) -- This could be better
