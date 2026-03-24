@@ -432,6 +432,7 @@ require('lazy').setup({
         'clang-format', -- c/c++ Language server
         'lua-language-server', -- Lua Language server
         'stylua', -- Used to format Lua code
+        -- 'svlete-language-server',
         -- 'csharpier',
         -- You can add other tools here that you want Mason to install
       })
@@ -691,7 +692,23 @@ require('lazy').setup({
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     config = function()
-      local filetypes = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
+      local filetypes = {
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'vim',
+        'vimdoc',
+        'svelte',
+        'javascript',
+        'typescript',
+        'css',
+      }
       require('nvim-treesitter').install(filetypes)
       vim.api.nvim_create_autocmd('FileType', {
         pattern = filetypes,

@@ -36,9 +36,9 @@ smap('<M-k>', ':m -2<CR>', 'Swap line with the previous')
 -- Tabs
 map('<M-t>', ':tabnew ', 'Open new tab')
 
-smap('<M-PageUp>', ':tabprevious<CR>', 'Goto previous tab')
+-- smap('<M-PageUp>', ':tabprevious<CR>', 'Goto previous tab')
 smap('<M-h>', ':tabprevious<CR>', 'Goto previous tab')
-smap('<M-PageDown>', ':tabnext<CR>', 'Goto next tab')
+-- smap('<M-PageDown>', ':tabnext<CR>', 'Goto next tab')
 smap('<M-l>', ':tabnext<CR>', 'Goto next tab')
 smap('<M-H>', ':-tabmove<CR>', 'Move tab right')
 smap('<M-L>', ':+tabmove<CR>', 'Move tab left')
