@@ -1,5 +1,5 @@
 function _G.VimDML(choise)
-  local dmlfile = vim.fn.stdpath 'config' .. '/nvim/vim.dml'
+  local dmlfile = vim.fn.stdpath 'config' .. '/vim.dml'
 
   -- 1. Temporarily set the variable in the current process
   vim.env.FT = vim.fn.expand '&filetype'

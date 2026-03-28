@@ -437,7 +437,9 @@ require('lazy').setup({
         -- You can add other tools here that you want Mason to install
       })
 
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      require('mason-tool-installer').setup {
+        ensure_installed = ensure_installed,
+      }
 
       for name, server in pairs(servers) do
         server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
@@ -709,6 +711,10 @@ require('lazy').setup({
         'typescript',
         'css',
       }
+
+      -- Configure tree-sitter to use pnpx
+      -- require('nvim-treesitter.install').command = 'pnpx tree-sitter-cli'
+
       require('nvim-treesitter').install(filetypes)
       vim.api.nvim_create_autocmd('FileType', {
         pattern = filetypes,
