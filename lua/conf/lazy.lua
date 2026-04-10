@@ -437,6 +437,17 @@ require('lazy').setup({
         -- You can add other tools here that you want Mason to install
       })
 
+      --- This is to ensure that pyright is using the uv default .venv
+      vim.lsp.config('pyright', {
+        on_init = function(client)
+          local venv_path = vim.fn.getcwd() .. '/.venv'
+          if vim.fn.executable(venv_path .. '/bin/python') == 1 then
+            client.config.settings.python.pythonPath = venv_path .. '/bin/python'
+            client.notify 'workspace/didChangeConfiguration'
+          end
+        end,
+      })
+
       require('mason-tool-installer').setup {
         ensure_installed = ensure_installed,
       }
