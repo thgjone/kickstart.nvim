@@ -1,6 +1,5 @@
+local dmlfile = vim.fn.stdpath 'config' .. '/vim.dml'
 function _G.VimDML(choise)
-  local dmlfile = vim.fn.stdpath 'config' .. '/vim.dml'
-
   -- 1. Temporarily set the variable in the current process
   vim.env.FT = vim.fn.expand '&filetype'
 
@@ -30,7 +29,7 @@ function _G.VimDML(choise)
           actions.select_default:replace(function()
             actions.close(prompt_bufnr)
             local selection = action_state.get_selected_entry()
-            local lines = vim.fn.systemlist('_dml_composer "' .. dmlfile .. '" "' .. selection.value .. '" | tee log.txt')
+            local lines = vim.fn.systemlist('_dml_composer "' .. dmlfile .. '" "' .. selection.value .. '"')
 
             for _, line in ipairs(lines) do
               vim.cmd(line)

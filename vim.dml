@@ -16,7 +16,7 @@ toggle_context          :exec "TSContextToggle"
 
 pp                      :%!tr ';' '\n'
 
-# sudo_save               :%!sudo -A tee %
+sudo_save               :%!sudo -A tee %
 
 
 %if [ "$FT" = "sh" ]
