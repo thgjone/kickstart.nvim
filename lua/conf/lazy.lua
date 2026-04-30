@@ -448,6 +448,20 @@ require('lazy').setup({
         end,
       })
 
+      local util = require 'lspconfig.util'
+      local pid = tostring(vim.fn.getpid())
+      local dotnet = '/opt/dotnet-7.0.410'
+
+      vim.lsp.configs = vim.lsp.configs or {}
+      vim.lsp.configs.omnisharp = {
+        default_config = {
+          cmd = { vim.fn.expand '~/.local/share/nvim/mason/bin/OmniSharp', '--languageserver', '--hostPID', pid },
+          cmd_env = { DOTNET_ROOT = dotnet, PATH = dotnet .. ':' .. (os.getenv 'PATH' or '') },
+          root_dir = util.root_pattern('.git', 'global.json', '*.sln', '*.csproj'),
+          filetypes = { 'cs' },
+        },
+      }
+
       require('mason-tool-installer').setup {
         ensure_installed = ensure_installed,
       }
